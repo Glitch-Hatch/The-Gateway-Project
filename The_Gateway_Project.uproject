@@ -1,8 +1,18 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{CAFE0FF2-DB46-7F95-AE13-4B95EA692E0D}",
+	"EngineAssociation": "5.6",
 	"Category": "",
 	"Description": "",
+	"Modules": [
+		{
+			"Name": "The_Gateway_Project",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	],
 	"Plugins": [
 		{
 			"Name": "OpenXR",
