@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "../../Private/Loading/BoxDeliveryOutline.h"
+#include "../../Private/Loading/BoxDeliveryDay.h"
 #include "BoxDeliveryManager.generated.h"
 
 UCLASS()
@@ -11,16 +13,45 @@ class THE_GATEWAY_PROJECT_API ABoxDeliveryManager : public AActor
 {
 	GENERATED_BODY()
 	
-public:	
-	// Sets default values for this actor's properties
-	ABoxDeliveryManager();
+	UPROPERTY()
+	USceneComponent* _RootComponent;
 
+	UFUNCTION()
+	TArray<FBoxDeliveryDay> InitializeBoxDistribution();
+
+	UPROPERTY()
+	TArray<FBoxDeliveryDay> BoxDistributionPattern;
+
+	UFUNCTION()
+	int GetOverallBoxCount(TArray<FDeliveryElementConfig> boxConfigs);
+
+	UFUNCTION()
+	TArray<FDeliveryElementConfig> GetDayOfBoxes(int totalBoxesOfDay, TArray<FDeliveryElementConfig> configs, TArray<int>& sentAmounts, bool getEverything);
+
+	UPROPERTY()
+	int RandomBoxRecursionCounter = 0;
+	
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UDataTable* BoxDeliveryData;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int TotalDays = 30;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int SelectionPercentageBias = 5;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool ReverseBoxSelectionMethod = true;
+
+	UPROPERTY(editAnywhere, BlueprintReadWrite)
+	int RandomBoxRecursionBound = 1000;
+	
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
+	
 public:	
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
+	
+	ABoxDeliveryManager();
 };
