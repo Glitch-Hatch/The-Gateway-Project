@@ -8,18 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71104ba4-9306-4085-8286-1423bec8ff44" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/BoxDeliveryDay.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/BoxDeliveryDay.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/BoxDeliveryOutline.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/BoxDeliveryOutline.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Gateway_Project.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Gateway_Project.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEditor.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEditor.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Core/Levels/Loading.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Core/Levels/Loading.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/BoxDeliveryManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/BoxDeliveryManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/DataTypes/BoxShape.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/DataTypes/BoxShape.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/DataTypes/BoxSize.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/DataTypes/BoxSize.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/DeliveryElementConfig.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/DeliveryElementConfig.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/The_Gateway_Project/Public/Loading/BoxDeliveryManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/The_Gateway_Project/Public/Loading/BoxDeliveryManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/The_Gateway_Project.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/The_Gateway_Project.uproject" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +28,16 @@
     <setting file="file://$PROJECT_DIR$/../../../../Shared/Epic Games/UE_5.6/Engine/Source/Runtime/Net/Core/Public/Net/Core/Analytics/NetStatsUtils.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/Epic Games/UE_5.6/Engine/Source/Runtime/Net/Core/Public/Net/Core/Connection/NetResult.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/Epic Games/UE_5.6/Engine/Source/Runtime/RHI/Public/RHIShaderBindingLayout.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/BoxDeliveryDay.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/BoxDeliveryDay.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/BoxDeliveryManager.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/BoxDeliveryOutline.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/BoxDeliveryOutline.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/The_Gateway_Project/Private/Loading/DeliveryElementConfig.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/The_Gateway_Project/Private/Shared/DayCycleRunner.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/The_Gateway_Project/Public/Loading/BoxDeliveryManager.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/The_Gateway_Project/Public/Shared/DayCycleRunner.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/The_Gateway_Project/Public/Shared/DayProgressorWidget.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -155,7 +151,7 @@
       <workItem from="1757000598898" duration="2349000" />
       <workItem from="1757338039339" duration="9934000" />
       <workItem from="1757424148952" duration="10774000" />
-      <workItem from="1757510524958" duration="5768000" />
+      <workItem from="1757510524958" duration="9171000" />
     </task>
     <servers />
   </component>
