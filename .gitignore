@@ -73,4 +73,8 @@ Plugins/**/Intermediate/*
 # Cache files for the editor to use
 DerivedDataCache/*
 
+# Mac-Specific metadata
 *.DS_Store
+
+# Rider specific cache
+.idea/
