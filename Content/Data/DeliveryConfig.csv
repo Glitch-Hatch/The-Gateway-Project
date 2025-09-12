@@ -1,0 +1,3 @@
+---,DisplayName,ArrivalPriority,Size,Shape,TotalAmount,SentAmount
+TestBox,"Test Box","25","Single","ArcDeep","5","0"
+TestBox_0,"Alternate Box","0","Single","ArcDeep","20","0"
