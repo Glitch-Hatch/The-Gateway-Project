@@ -3,8 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "DayProgressorWidget.h"
 #include "GameFramework/Actor.h"
+#include "DayProgressController.h"
 #include "DayCycleRunner.generated.h"
 
 UCLASS()
@@ -14,6 +14,12 @@ class THE_GATEWAY_PROJECT_API ADayCycleRunner : public AActor
 
 	UPROPERTY(BlueprintGetter=GetDayCount)
 	int DayCount = 0;
+
+	UPROPERTY()
+	bool LocalFinalizedTransition = false;
+
+	UPROPERTY()
+	UDayProgressController* ActiveProgressor;
 	
 public:	
 	// Sets default values for this actor's properties
@@ -25,12 +31,15 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void ProgressDayInstantly();
 
+	UFUNCTION(BlueprintCallable)
+	void RemoveActiveProgressor();
+	
 	UFUNCTION(BlueprintPure)
 	int GetDayCount() const;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<TSubclassOf<UDayProgressorWidget>> DayProgressors;
-
+	TArray<TSubclassOf<UDayProgressController>> DayProgressors;
+	
 	UFUNCTION(BlueprintCallable)
 	virtual void OnDayChange() {}
 
