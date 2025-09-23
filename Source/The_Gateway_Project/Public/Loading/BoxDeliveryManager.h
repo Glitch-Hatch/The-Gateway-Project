@@ -17,12 +17,6 @@ class THE_GATEWAY_PROJECT_API ABoxDeliveryManager : public AActor
 	USceneComponent* _RootComponent;
 
 	UFUNCTION()
-	TArray<FBoxDeliveryDay> InitializeBoxDistribution();
-
-	UPROPERTY()
-	TArray<FBoxDeliveryDay> BoxDistributionPattern;
-
-	UFUNCTION()
 	int GetOverallBoxCount(TArray<FDeliveryElementConfig> boxConfigs);
 
 	UFUNCTION()
@@ -32,6 +26,12 @@ class THE_GATEWAY_PROJECT_API ABoxDeliveryManager : public AActor
 	int RandomBoxRecursionCounter = 0;
 	
 public:
+	UFUNCTION()
+	TArray<FBoxDeliveryDay> InitializeBoxDistribution();
+
+	UPROPERTY()
+	TArray<FBoxDeliveryDay> BoxDistributionPattern;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UDataTable* BoxDeliveryData;
 	

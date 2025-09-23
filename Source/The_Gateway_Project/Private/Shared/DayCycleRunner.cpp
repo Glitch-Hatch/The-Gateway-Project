@@ -21,7 +21,7 @@ void ADayCycleRunner::BeginPlay()
 	Super::BeginPlay();
 
 	// Temp
-	ProgressDaySequence(1);
+	ProgressDaySequence(0);
 }
 
 void ADayCycleRunner::Tick(float DeltaTime)
@@ -54,7 +54,7 @@ void ADayCycleRunner::Tick(float DeltaTime)
 
 void ADayCycleRunner::ProgressDayInstantly()
 {
-	OnTransitionFinish();
+	OnDayChange();
 	DayCount++;
 }
 
@@ -72,6 +72,8 @@ void ADayCycleRunner::RemoveActiveProgressor()
 		ActiveProgressor->MarkAsGarbage();
 		ActiveProgressor = nullptr;
 		LocalFinalizedTransition = false;
+
+		OnTransitionFinish();
 	}
 	else
 	{
@@ -92,7 +94,7 @@ void ADayCycleRunner::ProgressDaySequence(int DayProgressorIndex)
 		return;
 	}
 
-	if (ActiveProgressor == nullptr)
+	if (ActiveProgressor != nullptr)
 	{
 		UE_LOG(GWLogDayChange, Warning, TEXT("Progressor already active. Try RemoveActiveProgressor to cancel a day cycle."))
 		return;

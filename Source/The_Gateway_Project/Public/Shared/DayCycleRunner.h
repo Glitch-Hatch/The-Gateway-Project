@@ -19,7 +19,7 @@ class THE_GATEWAY_PROJECT_API ADayCycleRunner : public AActor
 	bool LocalFinalizedTransition = false;
 
 	UPROPERTY()
-	UDayProgressController* ActiveProgressor;
+	ADayProgressController* ActiveProgressor;
 	
 public:	
 	// Sets default values for this actor's properties
@@ -38,7 +38,7 @@ public:
 	int GetDayCount() const;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<TSubclassOf<UDayProgressController>> DayProgressors;
+	TArray<TSubclassOf<ADayProgressController>> DayProgressors;
 	
 	UFUNCTION(BlueprintCallable)
 	virtual void OnDayChange() {}

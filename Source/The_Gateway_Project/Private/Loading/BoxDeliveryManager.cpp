@@ -16,8 +16,6 @@ ABoxDeliveryManager::ABoxDeliveryManager()
 void ABoxDeliveryManager::BeginPlay()
 {
 	Super::BeginPlay();
-
-	BoxDistributionPattern = InitializeBoxDistribution();
 }
 
 // Called every frame

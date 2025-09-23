@@ -3,13 +3,13 @@
 
 #include "Shared/DayProgressController.h"
 
-void UDayProgressController::FinalizeSequence()
+void ADayProgressController::FinalizeSequence()
 {
 	OnPreTransitionFinished();
 	TransitionFinalized = true;
 }
 
-void UDayProgressController::OnTick(float DeltaTime)
+void ADayProgressController::OnTick(float DeltaTime)
 {
 	TransitionProgress += DeltaTime/TransitionDuration;
 }

@@ -9,7 +9,7 @@
  * 
  */
 UCLASS()
-class THE_GATEWAY_PROJECT_API UDayProgressController : public UObject
+class THE_GATEWAY_PROJECT_API ADayProgressController : public AActor
 {
 	GENERATED_BODY()
 
