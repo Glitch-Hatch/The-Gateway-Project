@@ -26,6 +26,9 @@ class THE_GATEWAY_PROJECT_API ABoxDeliveryManager : public AActor
 	int RandomBoxRecursionCounter = 0;
 	
 public:
+	UPROPERTY(EditAnywhere, Category="Delivery Configuration")
+	TMap<EBoxShape, TSubclassOf<AActor>> StaticBoxShapes;
+	
 	UFUNCTION()
 	TArray<FBoxDeliveryDay> InitializeBoxDistribution();
 
@@ -35,16 +38,16 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UDataTable* BoxDeliveryData;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Delivery Configuration")
 	int TotalDays = 30;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Shuffle Configuration")
 	int SelectionPercentageBias = 5;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Shuffle Configuration")
 	bool ReverseBoxSelectionMethod = true;
 
-	UPROPERTY(editAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Shuffle Configuration")
 	int RandomBoxRecursionBound = 1000;
 	
 protected:
