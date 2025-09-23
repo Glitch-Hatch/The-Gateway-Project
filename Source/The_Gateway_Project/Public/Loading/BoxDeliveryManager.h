@@ -26,7 +26,7 @@ class THE_GATEWAY_PROJECT_API ABoxDeliveryManager : public AActor
 	int RandomBoxRecursionCounter = 0;
 	
 public:
-	UPROPERTY(EditAnywhere, Category="Delivery Configuration")
+	UPROPERTY(EditAnywhere, Category="Delivery Configuration", DisplayName="BoxClasses")
 	TMap<EBoxShape, TSubclassOf<AActor>> StaticBoxShapes;
 	
 	UFUNCTION()
@@ -35,7 +35,7 @@ public:
 	UPROPERTY()
 	TArray<FBoxDeliveryDay> BoxDistributionPattern;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Delivery Configuration")
 	UDataTable* BoxDeliveryData;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Delivery Configuration")
