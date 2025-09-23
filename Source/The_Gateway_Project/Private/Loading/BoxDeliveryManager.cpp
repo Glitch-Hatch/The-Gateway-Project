@@ -103,6 +103,8 @@ TArray<FDeliveryElementConfig> ABoxDeliveryManager::GetDayOfBoxes(int totalBoxes
 {
 	RandomBoxRecursionCounter++;
 	TArray<FDeliveryElementConfig> resultBoxes;
+
+	float recursionChanceBias = static_cast<float>(RandomBoxRecursionCounter)/static_cast<float>(RandomBoxRecursionBound);
 	
 	for (int i = 0; i < totalBoxesOfDay; i++)
 	{
@@ -120,7 +122,7 @@ TArray<FDeliveryElementConfig> ABoxDeliveryManager::GetDayOfBoxes(int totalBoxes
 				continue;
 			}
 
-			if (isLastIteration || getEverything || FMath::FRand() < static_cast<float>(config.ArrivalPriority + 1)/100.0f)
+			if (isLastIteration || getEverything || FMath::FRand() < static_cast<float>(config.ArrivalPriority + 1)/100.0f + recursionChanceBias)
 			{
 				sentAmounts[k]++;
 				resultBoxes.Add(config);
