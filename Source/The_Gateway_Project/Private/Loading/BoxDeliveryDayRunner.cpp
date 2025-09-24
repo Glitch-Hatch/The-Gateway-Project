@@ -7,7 +7,7 @@
 
 void ABoxDeliveryDayRunner::OnDayChange()
 {
-	
+	BoxDeliveryManager->SpawnBoxesForDay(GetDayCount());
 }
 
 void ABoxDeliveryDayRunner::BeginPlay()

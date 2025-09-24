@@ -137,3 +137,31 @@ TArray<FDeliveryElementConfig> ABoxDeliveryManager::GetDayOfBoxes(int totalBoxes
 	return resultBoxes;
 }
 
+void ABoxDeliveryManager::SpawnBoxesForDay(int day)
+{
+	TArray<FDeliveryElementConfig> todayBoxes = BoxDistributionPattern[day].Value;
+	UWorld* World = GetWorld();
+
+	const float circleMaximum = todayBoxes.Num();
+	
+	for (int i = 0; i < circleMaximum; i++)
+	{
+		FDeliveryElementConfig v = todayBoxes[i];
+
+		const float circleCurrent = static_cast<float>(i)/circleMaximum;
+		const float appliedCirclePosition = 2*PI * circleCurrent;
+
+		FVector offset = FVector(
+			FMath::Cos(appliedCirclePosition),
+			FMath::Sin(appliedCirclePosition),
+			0
+		) * BoxSpawnDistributionDistance;
+		
+		const FVector location = GetActorLocation() + offset;
+		const FRotator rotation = GetActorRotation() + FRotator(0, FMath::FRand() * 360, 0);
+		
+		AActor* createdBox = World->SpawnActor(StaticBoxParentClass, &location, &rotation);
+	}
+}
+
+

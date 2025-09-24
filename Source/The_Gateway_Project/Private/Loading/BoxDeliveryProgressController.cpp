@@ -15,7 +15,7 @@ void ABoxDeliveryProgressController::OnTick(float DeltaTime)
 		auto v = PointLights[i];
 		auto pointLight = Cast<APointLight>(v);
 			
-		float transitionPhase = static_cast<float>(i)/static_cast<float>(lightCount); // * LightDisableTransitionAlpha;
+		float transitionPhase = static_cast<float>(i)/static_cast<float>(lightCount);
 		
 		if (TransitionProgress < 0.5f)
 		{

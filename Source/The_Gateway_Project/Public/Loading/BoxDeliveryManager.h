@@ -26,11 +26,17 @@ class THE_GATEWAY_PROJECT_API ABoxDeliveryManager : public AActor
 	int RandomBoxRecursionCounter = 0;
 	
 public:
-	UPROPERTY(EditAnywhere, Category="Delivery Configuration", DisplayName="BoxClasses")
+	UPROPERTY(EditAnywhere, Category="Delivery Configuration")
+	float BoxSpawnDistributionDistance = 150;
+	
+	UPROPERTY(EditAnywhere, Category="Delivery Configuration", DisplayName="Box Class")
 	TSubclassOf<AActor> StaticBoxParentClass;
 	
 	UFUNCTION()
 	TArray<FBoxDeliveryDay> InitializeBoxDistribution();
+
+	UFUNCTION(BlueprintCallable)
+	void SpawnBoxesForDay(int day);
 
 	UPROPERTY()
 	TArray<FBoxDeliveryDay> BoxDistributionPattern;
