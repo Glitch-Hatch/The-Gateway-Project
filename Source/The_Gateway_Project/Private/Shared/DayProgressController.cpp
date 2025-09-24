@@ -5,6 +5,7 @@
 
 void ADayProgressController::FinalizeSequence()
 {
+	if (TransitionFinalized) { return; }
 	OnPreTransitionFinished();
 	TransitionFinalized = true;
 }

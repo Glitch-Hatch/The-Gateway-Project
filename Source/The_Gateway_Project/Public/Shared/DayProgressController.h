@@ -16,8 +16,11 @@ class THE_GATEWAY_PROJECT_API ADayProgressController : public AActor
 protected:
 	UFUNCTION()
 	virtual void OnPreTransitionFinished() {}
-	
+
 public:
+	UFUNCTION()
+	virtual void OnPreTransition() {}
+	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	bool TransitionFinalized;
 

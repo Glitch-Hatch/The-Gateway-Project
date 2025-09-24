@@ -19,9 +19,6 @@ ADayCycleRunner::ADayCycleRunner()
 void ADayCycleRunner::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// Temp
-	ProgressDaySequence(0);
 }
 
 void ADayCycleRunner::Tick(float DeltaTime)
@@ -101,7 +98,9 @@ void ADayCycleRunner::ProgressDaySequence(int DayProgressorIndex)
 	}
 
 	LocalFinalizedTransition = false;
-	ActiveProgressor = DayProgressors[DayProgressorIndex].GetDefaultObject();
+	auto progressor = DayProgressors[DayProgressorIndex];
+	ActiveProgressor = GetWorld()->SpawnActor<ADayProgressController>(progressor);
+	ActiveProgressor->OnPreTransition();
 }
 
 int ADayCycleRunner::GetDayCount() const

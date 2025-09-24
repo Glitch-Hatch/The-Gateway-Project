@@ -3,6 +3,8 @@
 
 #include "Loading/BoxDeliveryManager.h"
 
+#include "GatewayConfiguration.h"
+
 // Sets default values
 ABoxDeliveryManager::ABoxDeliveryManager()
 {
@@ -80,7 +82,7 @@ TArray<FBoxDeliveryDay> ABoxDeliveryManager::InitializeBoxDistribution()
 			remainderTracker -= remainderTrackerChange;
 
 			nextDayCount += remainderTrackerChange;
-			UE_LOG(LogTemp, Display, TEXT("Remainder Tracker: %f"), remainderTracker);
+			UE_LOG(GWLogBoxManager, Display, TEXT("Remainder Tracker: %f"), remainderTracker);
 		}
 		else
 		{
@@ -93,7 +95,7 @@ TArray<FBoxDeliveryDay> ABoxDeliveryManager::InitializeBoxDistribution()
 		
 		boxDistribution.Add(nextDay);
 		totalBoxCounter += nextDayCount;
-		UE_LOG(LogTemp, Display, TEXT("Day result: %d/%d. (%d) Avg: %f"), nextDayCount, boxCount, totalBoxCounter, averageBoxesPerDay);
+		UE_LOG(GWLogBoxManager, Display, TEXT("Day result: %d/%d. (%d) Avg: %f"), nextDayCount, boxCount, totalBoxCounter, averageBoxesPerDay);
 	}
 
 	return boxDistribution;
@@ -126,7 +128,7 @@ TArray<FDeliveryElementConfig> ABoxDeliveryManager::GetDayOfBoxes(int totalBoxes
 			{
 				sentAmounts[k]++;
 				resultBoxes.Add(config);
-				UE_LOG(LogTemp, Display, TEXT("Successfully added new box. Box Name: %s (%d/%d)"), *config.DisplayName.ToString(), sentAmounts[k], config.TotalAmount);
+				UE_LOG(GWLogBoxManager, Display, TEXT("Successfully added new box. Box Name: %s (%d/%d)"), *config.DisplayName.ToString(), sentAmounts[k], config.TotalAmount);
 				break;
 			}
 		}

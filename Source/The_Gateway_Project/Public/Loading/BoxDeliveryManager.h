@@ -27,7 +27,7 @@ class THE_GATEWAY_PROJECT_API ABoxDeliveryManager : public AActor
 	
 public:
 	UPROPERTY(EditAnywhere, Category="Delivery Configuration", DisplayName="BoxClasses")
-	TMap<EBoxShape, TSubclassOf<AActor>> StaticBoxShapes;
+	TSubclassOf<AActor> StaticBoxParentClass;
 	
 	UFUNCTION()
 	TArray<FBoxDeliveryDay> InitializeBoxDistribution();
