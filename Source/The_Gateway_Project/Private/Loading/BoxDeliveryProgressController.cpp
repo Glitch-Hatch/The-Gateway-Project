@@ -15,7 +15,7 @@ void ABoxDeliveryProgressController::OnTick(float DeltaTime)
 		auto v = PointLights[i];
 		auto pointLight = Cast<APointLight>(v);
 			
-		float transitionPhase = static_cast<float>(i)/static_cast<float>(lightCount) * LightDisableTransitionAlpha;
+		float transitionPhase = static_cast<float>(i)/static_cast<float>(lightCount); // * LightDisableTransitionAlpha;
 		
 		if (TransitionProgress < 0.5f)
 		{
@@ -29,7 +29,11 @@ void ABoxDeliveryProgressController::OnTick(float DeltaTime)
 		{
 			float undoTransitionPhase = 1-transitionPhase;
 
-			float subTransitionProgress = TransitionProgress/2;
+			float subTransitionProgress = (TransitionProgress-0.5f)*2;
+			if (i == 5)
+			{
+				UE_LOG(LogTemp, Display, TEXT("Progress: %f, Phase: %f"), subTransitionProgress, undoTransitionPhase)
+			}
 			if (!pointLight->IsEnabled() && subTransitionProgress > undoTransitionPhase)
 			{
 				pointLight->ToggleEnabled();
@@ -42,10 +46,24 @@ void ABoxDeliveryProgressController::OnTick(float DeltaTime)
 
 void ABoxDeliveryProgressController::OnPreTransition()
 {
-	TransitionDuration = 1;
+	TransitionDuration = 3;
 	PointLights = GetPointLights();
 	UE_LOG(GWLogDayChange, Display, TEXT("PointLights found: %d"), PointLights.Num())
 }
+
+void ABoxDeliveryProgressController::OnDestroyAnyReason()
+{
+	for (auto actor : PointLights)
+	{
+		APointLight* v = Cast<APointLight>(actor);
+
+		if (!v->IsEnabled())
+		{
+			v->ToggleEnabled();
+		}
+	}
+}
+
 
 TArray<AActor*> ABoxDeliveryProgressController::GetPointLights()
 {

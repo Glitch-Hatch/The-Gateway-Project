@@ -33,7 +33,7 @@ void ADayCycleRunner::Tick(float DeltaTime)
 		{
 			LocalFinalizedTransition = true;
 			ProgressDayInstantly();
-			ActiveProgressor->OnParentRecognizedTransitionFinished();
+			ActiveProgressor->OnParentRecognizedTransitionFinalized();
 
 			if (ActiveProgressor->ResetDaysOnComplete)
 			{

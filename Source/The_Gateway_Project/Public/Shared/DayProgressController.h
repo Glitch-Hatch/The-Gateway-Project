@@ -43,7 +43,7 @@ public:
 	virtual void OnTick(float DeltaTime);
 
 	UFUNCTION()
-	virtual void OnParentRecognizedTransitionFinished() {}
+	virtual void OnParentRecognizedTransitionFinalized() {}
 
 	UFUNCTION()
 	virtual void OnDestroyAnyReason() {}

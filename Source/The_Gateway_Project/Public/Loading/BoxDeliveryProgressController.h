@@ -22,6 +22,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float LightDisableTransitionAlpha = 0.3f;
 	
+	virtual void OnDestroyAnyReason() override;
+
 private:
 	UFUNCTION()
 	TArray<AActor*> GetPointLights();
