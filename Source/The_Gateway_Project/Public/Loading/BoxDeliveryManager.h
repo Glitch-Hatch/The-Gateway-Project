@@ -24,6 +24,9 @@ class THE_GATEWAY_PROJECT_API ABoxDeliveryManager : public AActor
 
 	UPROPERTY()
 	int RandomBoxRecursionCounter = 0;
+
+	UPROPERTY()
+	TArray<AActor*> Boxes;
 	
 public:
 	UPROPERTY(EditAnywhere, Category="Delivery Configuration")

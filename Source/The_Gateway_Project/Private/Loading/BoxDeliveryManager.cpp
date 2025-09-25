@@ -151,16 +151,19 @@ void ABoxDeliveryManager::SpawnBoxesForDay(int day)
 		const float circleCurrent = static_cast<float>(i)/circleMaximum;
 		const float appliedCirclePosition = 2*PI * circleCurrent;
 
-		FVector offset = FVector(
+		FVector positionOffset = FVector(
 			FMath::Cos(appliedCirclePosition),
 			FMath::Sin(appliedCirclePosition),
 			0
 		) * BoxSpawnDistributionDistance;
 		
-		const FVector location = GetActorLocation() + offset;
-		const FRotator rotation = GetActorRotation() + FRotator(0, FMath::FRand() * 360, 0);
+		FRotator rotationOffset = FRotator(0, FMath::FRand() * 360, 0);
+
+		const FVector location = GetActorLocation() + positionOffset;
+		const FRotator rotation = GetActorRotation() + rotationOffset;
 		
 		AActor* createdBox = World->SpawnActor(StaticBoxParentClass, &location, &rotation);
+		Boxes.Add(createdBox);
 	}
 }
 
