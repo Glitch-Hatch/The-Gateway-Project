@@ -55,6 +55,11 @@ void ADayCycleRunner::ProgressDayInstantly()
 	DayCount++;
 }
 
+bool ADayCycleRunner::IsTransitioning()
+{
+	return ActiveProgressor != nullptr;
+}
+
 void ADayCycleRunner::RemoveActiveProgressor()
 {
 	if (ActiveProgressor != nullptr)

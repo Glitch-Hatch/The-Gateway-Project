@@ -40,11 +40,14 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<TSubclassOf<ADayProgressController>> DayProgressors;
 	
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION()
 	virtual void OnDayChange() {}
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION()
 	virtual void OnTransitionFinish() {}
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	bool IsTransitioning();
 	
 protected:
 	// Called when the game starts or when spawned
