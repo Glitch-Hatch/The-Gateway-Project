@@ -1,2 +1,10 @@
 ---,TaskName,MinRange,MaxRange,TimesCallable,TaskType,TaskRequired,TaskRequiredExtension,HasExtension,Times Called
-NewRow,"None","0","0","0","Clothes","Clothes","Clothes","False","0"
+Clothes,"Get Clothes","1","7","1","Clothes","Clothes","MysteryBag","False","10"
+WashRags,"Get Wash Rags","8","15","1","WashRag","WashRag","MysteryBag","False","10"
+GeigerCounter,"Get Geiger Counter","16","23","1","GeigerCounter","GeigerCounter","MysteryBag","False","10"
+Dosimeter,"Get Dosimeter","24","29","1","Dosimeter","Dosimeter","MysteryBag","False","10"
+Seeds,"Get Seeds","30","44","1","Seeds","Seeds","MysteryBag","False","10"
+Microscope,"Get Microscopes","45","51","1","Microscope","Microscope","MysteryBag","False","10"
+Centrifuge,"Get Centrifuge","58","61","1","Centrifuge","Centrifuge","MysteryBag","False","10"
+PetriDish,"Get PetriDishes","62","64","1","PetriDish","PetriDish","MysteryBag","False","10"
+SolarCells,"Get Solar Cells","70","75","1","SolarCell","SolarCell","MysteryBag","False","10"
