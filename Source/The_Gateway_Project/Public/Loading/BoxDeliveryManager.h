@@ -47,7 +47,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Delivery Configuration")
 	UDataTable* BoxDeliveryData;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Delivery Configuration")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Delivery Configuration")
 	int TotalDays = 30;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Shuffle Configuration")

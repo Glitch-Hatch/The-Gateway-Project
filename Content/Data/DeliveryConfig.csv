@@ -1,5 +1,5 @@
 ---,DisplayName,ArrivalPriority,Size,Shape,TotalAmount,SentAmount
-Small,"Test Box","1","Small","ArcDeep","22","0"
-Medium,"Alternate Box","5","Single","ArcDeep","22","0"
-MediumLarge,"Common Box","10","Double","ArcDeep","23","0"
-Large,"Unnamed Item","25","Quadruple","ArcDeep","23","0"
+Small,"Small","1","Small","ArcDeep","220","0"
+Medium,"Medium","5","Single","ArcDeep","18","0"
+MediumLarge,"MediumLarge","10","Double","ArcDeep","10","0"
+Large,"Large","25","Quadruple","ArcDeep","10","0"
