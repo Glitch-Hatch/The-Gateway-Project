@@ -162,7 +162,7 @@ void ABoxDeliveryManager::SpawnBoxesForDay(int day)
 		const FVector location = GetActorLocation() + positionOffset;
 		const FRotator rotation = GetActorRotation() + rotationOffset;
 		
-		AActor* createdBox = World->SpawnActor(StaticBoxParentClass, &location, &rotation);
+		AActor* createdBox = World->SpawnActor(*StaticBoxParentClasses.Find(v.Size), &location, &rotation);
 		Boxes.Add(createdBox);
 	}
 }
