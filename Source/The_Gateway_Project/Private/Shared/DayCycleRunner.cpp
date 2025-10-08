@@ -83,7 +83,7 @@ void ADayCycleRunner::RemoveActiveProgressor()
 	}
 }
 
-void ADayCycleRunner::ProgressDaySequence(int DayProgressorIndex)
+void ADayCycleRunner::ProgressDaySequenceAtTime(int DayProgressorIndex, float preTransitionProgress)
 {
 	if (!DayProgressors.IsValidIndex(DayProgressorIndex))
 	{
@@ -105,8 +105,15 @@ void ADayCycleRunner::ProgressDaySequence(int DayProgressorIndex)
 	LocalFinalizedTransition = false;
 	auto progressor = DayProgressors[DayProgressorIndex];
 	ActiveProgressor = GetWorld()->SpawnActor<ADayProgressController>(progressor);
+	ActiveProgressor->TransitionProgress = preTransitionProgress;
 	ActiveProgressor->OnPreTransition();
 }
+
+void ADayCycleRunner::ProgressDaySequence(int DayProgressorIndex)
+{
+	ProgressDaySequenceAtTime(DayProgressorIndex, 0.0f);
+}
+
 
 int ADayCycleRunner::GetDayCount() const
 {

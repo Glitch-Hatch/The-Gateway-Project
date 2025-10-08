@@ -20,24 +20,14 @@ void ABoxDeliveryProgressController::OnTick(float DeltaTime)
 		if (TransitionProgress < 0.5f)
 		{
 			float subTransitionProgress = TransitionProgress*2;
-			if (pointLight->IsEnabled() && subTransitionProgress > transitionPhase)
-			{
-				pointLight->ToggleEnabled();
-			}
+			pointLight->SetEnabled(subTransitionProgress < transitionPhase);
 		}
 		else
 		{
 			float undoTransitionPhase = 1-transitionPhase;
 
 			float subTransitionProgress = (TransitionProgress-0.5f)*2;
-			if (i == 5)
-			{
-				UE_LOG(LogTemp, Display, TEXT("Progress: %f, Phase: %f"), subTransitionProgress, undoTransitionPhase)
-			}
-			if (!pointLight->IsEnabled() && subTransitionProgress > undoTransitionPhase)
-			{
-				pointLight->ToggleEnabled();
-			}
+			pointLight->SetEnabled(subTransitionProgress > undoTransitionPhase);
 		}
 	}
 	
