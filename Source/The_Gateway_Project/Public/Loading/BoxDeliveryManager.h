@@ -32,8 +32,8 @@ public:
 	UPROPERTY(EditAnywhere, Category="Delivery Configuration")
 	float BoxSpawnDistributionDistance = 150;
 	
-	UPROPERTY(EditAnywhere, Category="Delivery Configuration", DisplayName="Box Class")
-	TSubclassOf<AActor> StaticBoxParentClass;
+	UPROPERTY(EditAnywhere, Category="Delivery Configuration", DisplayName="Box Classes")
+	TMap<EBoxSize, TSubclassOf<AActor>> StaticBoxParentClasses;
 	
 	UFUNCTION()
 	TArray<FBoxDeliveryDay> InitializeBoxDistribution();
@@ -47,7 +47,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Delivery Configuration")
 	UDataTable* BoxDeliveryData;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Delivery Configuration")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Delivery Configuration")
 	int TotalDays = 30;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Shuffle Configuration")
