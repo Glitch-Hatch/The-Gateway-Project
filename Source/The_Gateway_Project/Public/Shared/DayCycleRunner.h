@@ -28,6 +28,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void ProgressDaySequence(int DayProgressorIndex);
 
+	UFUNCTION()
+	void ProgressDaySequenceAtTime(int DayProgressorIndex, float preTransitionProgress);
+
 	UFUNCTION(BlueprintCallable)
 	void ProgressDayInstantly();
 

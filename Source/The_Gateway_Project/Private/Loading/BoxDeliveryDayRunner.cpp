@@ -19,7 +19,7 @@ void ABoxDeliveryDayRunner::BeginPlay()
 	BoxDeliveryManager->BoxDistributionPattern = BoxDeliveryManager->InitializeBoxDistribution();
 	UE_LOG(GWLogDayChange, Display, TEXT("Finished box delivery outline initialization."));
 
-	ProgressDaySequence(0);
+	ProgressDaySequenceAtTime(0, 0.5f);
 }
 
 ABoxDeliveryManager* ABoxDeliveryDayRunner::FindDeliveryManager()
